@@ -10,9 +10,9 @@ const AddDoctor = () => {
     const [name,setName]= useState('')
     const [email,setEmail]= useState('')
     const [password,setPassword]= useState('')
-    const [experience,setExperience]= useState('')
+    const [experience,setExperience]= useState('1 Year')
     const [fees,setFees]= useState('')
-    const [speciality,setSpeciality]= useState('')
+    const [speciality,setSpeciality]= useState('General physician')
     const [about,setAbout]= useState('')
     const [degree,setDegree]= useState('')
     const [address1,setAddress1]= useState('')
@@ -47,9 +47,9 @@ const AddDoctor = () => {
             formData.append('address',JSON.stringify({line1:address1,line2:address2}))
 
             // CONSOLE LOG FORMDATA
-            formData.forEach((value,key)=>{
-                console.log(`${key} : ${value}`)
-            })
+            // formData.forEach((value,key)=>{
+            //     console.log(`${key} : ${value}`)
+            // })
 
 
             const {data}=await axios.post(backendUrl + '/api/admin/add-doctor',formData,{headers:{atoken:aToken}})

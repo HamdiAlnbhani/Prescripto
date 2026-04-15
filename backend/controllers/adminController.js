@@ -19,6 +19,7 @@ const addDoctor=async(req,res)=>{
         fees,
         address,
       } = req.body;
+     console.log(req.body)
       const imageFaile = req.file;
 
       //CHECKING FOR ALL DATA TO ADD DOCTOR
