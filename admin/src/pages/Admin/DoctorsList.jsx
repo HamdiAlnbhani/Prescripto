@@ -6,8 +6,6 @@ const DoctorsList = () => {
   
   useEffect (()=>{
    if(aToken){
-  
-  
     
     getAllDoctors()
    }

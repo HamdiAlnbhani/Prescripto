@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { assets } from '../assets/assets'
 import { AdminContext } from '../context/AdminContexr'
 import {useNavigate} from 'react-router-dom'
+import { DoctorContext } from '../context/DoctorContext'
 
 const Navbar = () => {
 
@@ -9,11 +10,18 @@ const Navbar = () => {
 
 
     const {aToken,setAToken}=useContext(AdminContext)
+    const {dToken,setDToken}=useContext(DoctorContext)
     
     const logout= () =>{
         navigate('/')
+        if(aToken){
         aToken && setAToken('')
         aToken && localStorage.removeItem('aToken')
+        }else{
+        dToken && setDToken('')
+        dToken && localStorage.removeItem('dToken')
+        }
+       
         }
 
         
